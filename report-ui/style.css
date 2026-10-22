@@ -2317,27 +2317,102 @@ a.graph-dossier-fact.fact-swap:focus-visible {
 
 .report-footer {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 24px auto 0;
   padding: 0 24px 40px;
   color: var(--text-secondary);
   font-size: 12px;
+  line-height: 1.55;
 }
 
 .report-footer p {
-  margin: 8px 0 0;
+  margin: 0;
+}
+
+.report-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+}
+
+.report-footer a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.report-footer a:focus-visible {
+  color: var(--accent-hover);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Brand row: logo and identity on the left, links on the right. A hairline
+   separates the footer from the last dependency row above it. */
+.report-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 0 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.report-footer-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* The logo is copied from the favicon at load; until then keep the slot
+   empty rather than showing a broken-image glyph. */
+.report-footer-logo:not([src]) {
+  visibility: hidden;
+}
+
+.report-footer-identity {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.report-footer-name {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.report-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  margin-left: auto;
+  font-size: 12.5px;
+}
+
+.report-footer-about {
+  display: grid;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.report-footer-about > p:not(.report-footer-heading):not(.report-footer-vintage) {
+  max-width: 88ch;
+}
+
+.report-footer-heading {
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .report-footer-vintage {
   color: var(--text-muted);
   font-size: 11.5px;
-}
-
-.report-footer-support a {
-  color: var(--accent);
-}
-
-.report-footer-support a:hover {
-  color: var(--accent-hover);
 }
 
 .report-footer.hidden {
@@ -3729,6 +3804,15 @@ details[open] > summary .expand-icon {
 
   .report-footer {
     padding: 0 16px 32px;
+  }
+
+  .report-footer-brand {
+    flex-wrap: wrap;
+  }
+
+  .report-footer-links {
+    flex-basis: 100%;
+    margin-left: 54px;
   }
 
   .vuln-table thead {

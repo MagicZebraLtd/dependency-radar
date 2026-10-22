@@ -567,10 +567,23 @@ ${safeCssContent}
   </main>
 
   <footer class="report-footer">
-    <p><strong>About this report</strong></p>
-    <p>Dependency Radar does not perform malware scanning or security auditing. It surfaces factual signals from dependency metadata, known vulnerabilities (npm audit), dependency graphs, and install-time behaviour to support informed review.</p>
-    <p class="report-footer-vintage">Dependency Radar v${escapeHtml(data.dependencyRadarVersion)} \u00b7 report created ${escapeHtml(formattedDate)}. Bundled definitions: SPDX licence list (${spdx_1.SPDX_LICENSE_LIST_RELEASE_DATE}) · e18e module-replacements ${replacements_1.MODULE_REPLACEMENTS_VERSION} (${replacements_1.MODULE_REPLACEMENTS_DATE}).</p>
-    <p class="report-footer-support">Dependency Radar is free and open source, made by <a href="https://www.magiczebra.co.uk" target="_blank" rel="noopener noreferrer">Magic Zebra Ltd</a>. Learn more at <a href="https://www.dependency-radar.com" target="_blank" rel="noopener noreferrer">dependency-radar.com</a>. If it saved you time, you can <a href="https://ko-fi.com/magiczebra" target="_blank" rel="noopener noreferrer">support us on Ko-fi</a>.</p>
+    <div class="report-footer-brand">
+      <img class="report-footer-logo" alt="" width="40" height="40" />
+      <div class="report-footer-identity">
+        <p class="report-footer-name">Dependency Radar</p>
+        <p class="report-footer-tagline">Free and open source · made by <a href="https://www.magiczebra.co.uk" target="_blank" rel="noopener noreferrer">Magic Zebra Ltd</a></p>
+      </div>
+      <nav class="report-footer-links" aria-label="Dependency Radar links">
+        <a href="https://www.dependency-radar.com" target="_blank" rel="noopener noreferrer">dependency-radar.com</a>
+        <a href="https://github.com/MagicZebraLtd/dependency-radar" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="report-footer-support" href="https://ko-fi.com/magiczebra" target="_blank" rel="noopener noreferrer">Support us on Ko-fi</a>
+      </nav>
+    </div>
+    <div class="report-footer-about">
+      <p class="report-footer-heading">About this report</p>
+      <p>Dependency Radar does not perform malware scanning or security auditing. It surfaces factual signals from dependency metadata, known vulnerabilities (npm audit), dependency graphs, and install-time behaviour to support informed review.</p>
+      <p class="report-footer-vintage">Dependency Radar v${escapeHtml(data.dependencyRadarVersion)} \u00b7 report created ${escapeHtml(formattedDate)} \u00b7 bundled definitions: SPDX licence list (${spdx_1.SPDX_LICENSE_LIST_RELEASE_DATE}), e18e module-replacements ${replacements_1.MODULE_REPLACEMENTS_VERSION} (${replacements_1.MODULE_REPLACEMENTS_DATE})</p>
+    </div>
   </footer>
   
   <script type="application/json" id="radar-data">${json}</script>

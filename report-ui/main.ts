@@ -2988,6 +2988,16 @@ async function init(): Promise<void> {
     ) as HTMLElement | null,
   };
 
+  // Footer logo: reuse the favicon's data URI instead of inlining the logo
+  // SVG a second time (the header copy carries ids that would clash).
+  const footerLogo = controls.reportFooter?.querySelector<HTMLImageElement>(
+    ".report-footer-logo",
+  );
+  const faviconHref = document.querySelector<HTMLLinkElement>(
+    'link[rel="icon"]',
+  )?.href;
+  if (footerLogo && faviconHref) footerLogo.src = faviconHref;
+
   // Sorting state - "name" is the default (Package name ascending)
   let sortColumn = "name";
   let sortAscending = true;
